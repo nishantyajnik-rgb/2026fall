@@ -1,0 +1,145 @@
+html,
+body 
+{
+    position: relative;
+
+    min-width: 2500px;
+    min-height: 2500px;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: #dcecff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow: auto;
+}
+
+#welcome 
+{
+    width: 500px;
+    height: 220px;
+
+    margin: 50px;
+    padding: 25px;
+
+    border: 5px solid #25344f;
+
+    background-color: white;
+    color: #25344f;
+
+    text-align: center;
+}
+
+h1 
+{
+    font-size: 42px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.important 
+{
+    color: #c22626;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.secret 
+{
+    position: absolute;
+
+    width: 300px;
+    height: 180px;
+
+    padding: 25px;
+
+    border: 4px dashed #333333;
+
+    background-color: #fff6ba;
+    color: #222222;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    opacity: 0.85;
+}
+
+.secret-one 
+{
+    top: 500px;
+    left: 900px;
+}
+
+
+.secret-two 
+{
+    top: 1100px;
+    left: 1800px;
+}
+
+
+.secret-three 
+{
+    top: 1950px;
+    left: 500px;
+}
+
+.warning 
+{
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+#mystery-image 
+{
+    position: absolute;
+
+    top: 700px;
+    left: 2000px;
+
+    width: 350px;
+    height: 350px;
+
+    border: 10px solid white;
+
+    opacity: 0.75;
+
+    z-index: 1;
+}
+
+
+#final-secret {
+    position: absolute;
+
+    top: 2150px;
+    left: 2050px;
+
+    width: 350px;
+    height: 200px;
+
+    padding: 30px;
+
+    margin: 20px;
+
+    border: 8px solid #8b0000;
+
+    background-color: #ffdddd;
+    color: #8b0000;
+
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+
+    text-align: center;
+
+    text-decoration: underline;
+
+    z-index: 2;
+}
