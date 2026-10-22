@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant's Animated Screensaver</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="screen">
+
+    
+    <input type="checkbox" id="pause" class="toggle">
+    <input type="checkbox" id="blue-reverse" class="toggle">
+    <input type="checkbox" id="pink-reverse" class="toggle">
+    <input type="checkbox" id="amber-reverse" class="toggle">
+
+    <div class="stars"></div>
+
+    <div class="orbit orbit-outer">
+        <label for="blue-reverse"
+               class="planet blue"
+               title="Reverse blue orbit"></label>
+    </div>
+
+    <div class="orbit orbit-middle">
+        <label for="pink-reverse"
+               class="planet pink"
+               title="Reverse pink orbit"></label>
+    </div>
+
+    <div class="orbit orbit-inner">
+        <label for="amber-reverse"
+               class="planet amber"
+               title="Reverse amber orbit"></label>
+    </div>
+
+    <div class="sun"></div>
+
+    <div class="controls">
+        <label for="pause" class="pause-button">
+            <span class="pause-text">Pause</span>
+            <span class="resume-text">Resume</span>
+        </label>
+        <p>Click a planet to reverse its orbit</p>
+    </div>
+
+</main>
+
+</body>
+</html>

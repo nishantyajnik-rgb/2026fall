@@ -1,0 +1,296 @@
+* 
+{
+    box-sizing: border-box;
+}
+
+html, body 
+{
+    margin: 0;
+    min-height: 100%;
+}
+
+body 
+{
+    font-family: Arial, sans-serif;
+    background: #02030a;
+}
+
+.screen 
+{
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+    background: radial-gradient(
+        circle at center,
+        #121a35,
+        #080b19 55%,
+        #02030a
+    );
+}
+
+
+.toggle 
+{
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+
+.stars 
+{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.8;
+    background-image:
+        radial-gradient(2px 2px at 15% 20%, white 99%, transparent),
+        radial-gradient(2px 2px at 80% 30%, #8bdcff 99%, transparent),
+        radial-gradient(2px 2px at 35% 80%, white 99%, transparent),
+        radial-gradient(3px 3px at 65% 70%, #c5a1ff 99%, transparent);
+    background-size: 310px 240px;
+    animation: drift 18s linear infinite;
+}
+
+
+.orbit 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid #6c7ad366;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: spin 9s linear infinite;
+}
+
+.orbit-outer 
+{
+    width: min(76vw, 68vh, 440px);
+    aspect-ratio: 1;
+    margin-left: calc(min(76vw, 68vh, 440px) / -2);
+    margin-top: calc(min(76vw, 68vh, 440px) / -2);
+}
+
+.orbit-middle 
+{
+    width: min(54vw, 47vh, 300px);
+    aspect-ratio: 1;
+    margin-left: calc(min(54vw, 47vh, 300px) / -2);
+    margin-top: calc(min(54vw, 47vh, 300px) / -2);
+    animation-duration: 6s;
+    animation-direction: reverse;
+}
+
+.orbit-inner 
+{
+    width: min(30vw, 26vh, 170px);
+    aspect-ratio: 1;
+    margin-left: calc(min(30vw, 26vh, 170px) / -2);
+    margin-top: calc(min(30vw, 26vh, 170px) / -2);
+    animation-duration: 4s;
+}
+
+
+.planet 
+{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: scale 0.3s ease, filter 0.3s ease;
+}
+
+.planet:hover 
+{
+    scale: 1.4;
+    filter: brightness(1.4);
+}
+
+.blue 
+{
+    width: 28px;
+    height: 28px;
+    background: radial-gradient(
+        circle at 30% 25%,
+        white,
+        #51eaff 25%,
+        #0055ff 65%,
+        #15035c
+    );
+    box-shadow: 0 0 25px #00c8ff, 0 0 55px #007bff88;
+}
+
+.pink 
+{
+    width: 23px;
+    height: 23px;
+    background: radial-gradient(
+        circle at 30% 25%,
+        white,
+        #ff8bf1 30%,
+        #c500f7 65%,
+        #43005b
+    );
+    box-shadow: 0 0 25px #ff40f2;
+}
+
+.amber 
+{
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(
+        circle at 30% 25%,
+        white,
+        #fffa83 30%,
+        #ff7a00 75%
+    );
+    box-shadow: 0 0 20px #ffac35;
+}
+
+
+.sun 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(
+        circle at 35% 30%,
+        white,
+        #92ffff 20%,
+        #09b5f5 48%,
+        #5121ac 80%
+    );
+    box-shadow: 0 0 28px #1edfff, 0 0 75px #6258ff99;
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+
+.controls 
+{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    color: #b7c6ed;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+}
+
+.pause-button 
+{
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid #91b6ff88;
+    border-radius: 25px;
+    color: white;
+    background: #142347dd;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pause-button:hover 
+{
+    background: #264b87;
+    box-shadow: 0 0 20px #297aff66;
+}
+
+.resume-text 
+{
+    display: none;
+}
+
+
+#pause:checked ~ .orbit,
+#pause:checked ~ .sun,
+#pause:checked ~ .stars 
+{
+    animation-play-state: paused;
+}
+
+
+#pause:checked ~ .controls .pause-text 
+{
+    display: none;
+}
+
+#pause:checked ~ .controls .resume-text 
+{
+    display: inline;
+}
+
+
+#blue-reverse:checked ~ .orbit-outer 
+{
+    animation-direction: reverse;
+}
+
+#pink-reverse:checked ~ .orbit-middle 
+{
+    animation-direction: normal;
+}
+
+#amber-reverse:checked ~ .orbit-inner 
+{
+    animation-direction: reverse;
+}
+
+
+@keyframes spin 
+{
+    to 
+    {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse 
+{
+    50% 
+    {
+        scale: 1.25;
+        box-shadow:
+            0 0 45px #1edfff,
+            0 0 100px #6258ff;
+    }
+}
+
+@keyframes drift 
+{
+    to 
+    {
+        background-position: 310px 240px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) 
+{
+    .orbit 
+    {
+        animation-duration: 30s;
+    }
+
+    .stars 
+    {
+        animation-duration: 60s;
+    }
+}
