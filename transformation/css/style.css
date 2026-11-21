@@ -1,0 +1,189 @@
+* 
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+body 
+{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e2e8f0;
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container 
+{
+  background-color: #f8fafc;
+  max-width: 600px;
+  width: 100%;
+  padding: 45px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  border-top: 6px solid #3b82f6;
+}
+
+.badge 
+{
+  display: inline-block;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+h1 
+{
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  color: #0f172a;
+}
+
+p 
+{
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 28px;
+}
+
+.meme-grid 
+{
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.meme-card 
+{
+  flex: 1;
+  background: #ffffff;
+  padding: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.meme-card strong 
+{
+  display: block;
+  font-size: 1.1rem;
+  color: #2563eb;
+  margin-bottom: 6px;
+}
+
+.meme-card span 
+{
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+button 
+{
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover 
+{
+  background-color: #2563eb;
+}
+
+.hint 
+{
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #94a3b8;
+}
+
+body.neon-mode 
+{
+  background-color: #0d0216;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body.neon-mode .container 
+{
+  background-color: #1a0429;
+  border-top: 6px solid #ff007f;
+  border: 2px solid #ff007f;
+  box-shadow: 0 0 30px rgba(255, 0, 127, 0.5), 10px 10px 0px #ffbe0b;
+  transform: rotate(-1deg);
+}
+
+body.neon-mode .badge 
+{
+  background-color: #ffbe0b;
+  color: #0d0216;
+  font-weight: 900;
+  box-shadow: 0 0 12px #ffbe0b;
+}
+
+body.neon-mode h1 
+{
+  color: #ff007f;
+  text-shadow: 0 0 10px rgba(255, 0, 127, 0.7);
+  text-transform: uppercase;
+}
+
+body.neon-mode p 
+{
+  color: #ff9e00;
+}
+
+body.neon-mode .meme-card 
+{
+  background-color: #29063d;
+  border: 1px solid #ff5400;
+  box-shadow: 0 0 12px rgba(255, 84, 0, 0.3);
+}
+
+body.neon-mode .meme-card strong 
+{
+  color: #ffbe0b;
+}
+
+body.neon-mode .meme-card span 
+{
+  color: #ffd6a5;
+}
+
+body.neon-mode button 
+{
+  background-color: #ff007f;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 0 0 18px #ff007f;
+}
+
+body.neon-mode button:hover 
+{
+  background-color: #ff5400;
+  box-shadow: 0 0 22px #ff5400;
+}
+
+body.neon-mode .hint 
+{
+  color: #ff007f;
+}
